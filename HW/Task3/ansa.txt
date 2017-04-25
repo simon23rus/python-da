@@ -1,0 +1,80 @@
+generate --depth 2 --size 50
+In probability theory, the normal (or Gaussian) distribution is a very common continuous probability distribution. Normal distributions are important in statistics and are often used in the natural and social sciences to represent real-valued random variables whose distributions are not known.[1][2]
+
+The normal distribution is useful because of the central limit theorem. In its most general form, under some conditions (which include finite variance), it states that averages of random variables independently drawn from independent distributions converge in distribution to the normal, that is, become normally distributed when the number of random variables is sufficiently large. Physical quantities that are expected to be the sum of many independent processes (such as measurement errors) often have distributions that are nearly normal.[3] Moreover, many results and methods (such as propagation of uncertainty and least squares parameter fitting) can be derived analytically in explicit form when the relevant variables are normally distributed.
+
+The normal distribution is sometimes informally called the bell curve. However, many other distributions are bell-shaped (such as the Cauchy, Student's t, and logistic distributions). Even the term Gaussian bell curve is ambiguous because it may be used to refer to some function defined in terms of the Gaussian function which is not a probability distribution because it is not normalized in that it does not integrate to 1.
+
+The probability density of the normal distribution is
+
+
+_-_-_-_ANS-_-_-_-_
+the normal distribution is not a probability distribution is not a probability distribution is not a probability distribution is not a probability distribution is not
+_-_-_-_END-_-_-_-_
+
+
+generate --depth 6 --size 100
+It is also a component of the definition of the t-distribution and the F-distribution used in t-tests, analysis of variance, and regression analysis.
+
+The primary reason that the chi-squared distribution is used extensively in hypothesis testing is its relationship to the normal distribution. Many hypothesis tests use a test statistic, such as the t statistic in a t-test. For these hypothesis tests, as the sample size, n, increases, the sampling distribution of the test statistic approaches the normal distribution (Central Limit Theorem). Because the test statistic (such as t) is asymptotically normally distributed, provided the sample size is sufficiently large, the distribution used for hypothesis testing may be approximated by a normal distribution. Testing hypotheses using a normal distribution is well understood and relatively easy. The simplest chi-squared distribution is the square of a standard normal distribution. So wherever a normal distribution could be used for a hypothesis test, a chi-squared distribution could be used.
+
+Specifically, suppose that Z is a standard normal random variable, with mean = 0 and variance = 1. Z ~ N(0,1). A sample drawn at random from Z is a sample from the distribution shown in the graph of the standard normal distribution. Define a new random variable Q. To generate a random sample from Q, take a sample from Z and square the value. The distribution of the squared values is given by the random variable Q = Z2. The distribution of the random variable Q is an example of a chi-squared distribution: 
+ 
+Q
+ 
+∼
+ 
+χ
+1
+2
+.
+\ Q\ \sim \ \chi _{1}^{2}. The subscript 1 indicates that this particular chi-squared distribution is constructed from only 1 standard normal distribution. A chi-squared distribution constructed by squaring a single standard normal distribution is said to have 1 degree of freedom. Thus, as the sample size for a hypothesis test increases, the distribution of the test statistic approaches a normal distribution, and the distribution of the square of the test statistic approaches a chi-squared distribution. Just as extreme values of the normal distribution have low probability (and give small p-values), extreme values of the chi-squared distribution have low probability.
+
+An additional reason that the chi-squared distribution is widely used is that it is a member of the class of likelihood ratio tests (LRT).[6] LRT's have several desirable properties; in particular, LRT's commonly provide the highest power to reject the null hypothesis (Neyman–Pearson lemma). However, the normal and chi-squared approximations are only valid asymptotically. For this reason, it is preferable to use the t distribution rather than the normal approximation or the chi-squared approximation for small sample size. Similarly, in analyses of contingency tables, the chi-squared approximation will be poor for small sample size, and it is preferable to use Fisher's exact test. Ramsey and Ramsey show that the exact binomial test is always more powerful than the normal approximation.[7]
+
+Lancaster[8] shows the connections among the binomial, normal, and chi-squared distributions, as follows. De Moivre and Laplace established that a binomial distribution could be approximated by a normal distribution. Specifically they showed the asymptotic normality of the random variable
+
+
+
+
+
+_-_-_-_ANS-_-_-_-_
+the normal distribution (Central Limit Theorem). Because the test statistic approaches a chi-squared distribution is constructed from only 1 standard normal distribution. A chi-squared distribution is constructed from only 1 standard normal distribution. A chi-squared distribution is constructed from only 1 standard normal distribution.
+_-_-_-_END-_-_-_-_
+
+
+generate --depth 8 --size 300
+That can I;
+At least, the whisper goes so. Our last king,
+Whose image even but now appear'd to us,
+Was, as you know, by Fortinbras of Norway,
+Thereto prick'd on by a most emulate pride,
+Dared to the combat; in which our valiant Hamlet--
+For so this side of our known world esteem'd him--
+Did slay this Fortinbras; who by a seal'd compact,
+Well ratified by law and heraldry,
+Did forfeit, with his life, all those his lands
+Which he stood seized of, to the conqueror:
+Against the which, a moiety competent
+Was gaged by our king; which had return'd
+To the inheritance of Fortinbras,
+Had he been vanquisher; as, by the same covenant,
+And carriage of the article design'd,
+His fell to Hamlet. Now, sir, young Fortinbras,
+Of unimproved mettle hot and full,
+Hath in the skirts of Norway here and there
+Shark'd up a list of lawless resolutes,
+For food and diet, to some enterprise
+That hath a stomach in't; which is no other--
+As it doth well appear unto our state--
+But to recover of us, by strong hand
+And terms compulsatory, those foresaid lands
+So by his father lost: and this, I take it,
+Is the main motive of our preparations,
+The source of this our watch and the chief head
+Of this post-haste and romage in the land.
+
+
+_ANS_ANS_ANS_ANS
+the article design'd, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by Fortinbras of Norway, by 
+

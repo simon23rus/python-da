@@ -42,7 +42,6 @@ class Predator(object):
 
     def need_child(self):
         if self.cur_lifetime == self.birth_time:
-            self.cur_lifetime = 0
             return True
         else:
             return False
@@ -62,7 +61,6 @@ class Victim(object):
 
     def need_child(self):
         if self.cur_lifetime == self.birth_time:
-            self.cur_lifetime = 0
             return True
         else:
             return False
@@ -104,18 +102,7 @@ class Ocean:
 
         print(res + '\n\n')
 
-    def go(self, pos):
-        # print("POS", pos)
-        if isinstance(self[pos], int):
-            return
-
-        is_predator = False
-        if isinstance(self[pos], Predator):
-            is_predator = True
-            self[pos].cur_hunger -= 1
-
-        self[pos].cur_lifetime += 1
-
+    def get_neighbours(self, pos):
         free_cells = set()
         victim_cells = set()
         for i in range(-1, 2):
@@ -130,28 +117,28 @@ class Ocean:
                         free_cells.add((pos[0] + i,
                                         pos[1] + j))
                     elif isinstance(neighbor, Victim):
-                        # Victim
                         victim_cells.add((pos[0] + i,
                                           pos[1] + j))
 
-        need_child = self[pos].need_child()  # dunno :(
-        if need_child and len(free_cells):
-            child_pos = random.sample(free_cells, 1)[0]
-            free_cells.remove(child_pos)
-            if is_predator:
-                self.predators_number += 1
-                self[child_pos] = self[pos].span_child()
-            else:
-                self.victims_number += 1
-                self[child_pos] = self[pos].span_child()
+        return free_cells, victim_cells
 
-        new_pos = None
+    def span_child(self, pos, free_cells, is_predator):
+        child_pos = random.sample(free_cells, 1)[0]
+        free_cells.remove(child_pos)
+        if is_predator:
+            self.predators_number += 1
+            self[child_pos] = self[pos].span_child()
+        else:
+            self.victims_number += 1
+            self[child_pos] = self[pos].span_child()
+
+    def process_new_pos(self, pos, free_cells, victim_cells, is_predator):
         if is_predator:
             available_cells = free_cells | victim_cells
             if len(available_cells):
                 new_pos = random.sample(available_cells, 1)[0]
             else:
-                if self[pos].is_alive() is False:
+                if not self[pos].is_alive():
                     self.predators_number -= 1
 
                     self[pos] = 0
@@ -163,17 +150,43 @@ class Ocean:
             else:
                 return
 
+        return new_pos
+
+    def update_properties_before_move(self, pos, new_pos):
+        if isinstance(self[new_pos], Victim):
+            self[pos].cur_hunger = self[pos].hungry_time
+            self.victims_number -= 1
+        else:
+            if not self[pos].is_alive():
+                self.predators_number -= 1
+                self[pos] = 0
+
+    def go(self, pos):
+        if isinstance(self[pos], int):
+            return
+
+        is_predator = False
+        if isinstance(self[pos], Predator):
+            is_predator = True
+            self[pos].cur_hunger -= 1
+
+        self[pos].cur_lifetime += 1
+
+        free_cells, victim_cells = self.get_neighbours(pos)
+
+        if self[pos].need_child() and len(free_cells) is not 0:
+            self[pos].cur_lifetime = 0
+            self.span_child(pos, free_cells, is_predator)
+
+        new_pos = self.process_new_pos(pos, free_cells, victim_cells, is_predator)
+
+        if new_pos is None:
+            return
+
         self.snapshot[new_pos[0]][new_pos[1]] = 0  # HERE ASSIGN SNAPSHOT VALUE
 
         if is_predator:
-            if isinstance(self[new_pos], Victim):
-                self[pos].cur_hunger = self[pos].hungry_time
-                self.victims_number -= 1
-            else:
-                if self[pos].is_alive() is False:
-                    self.predators_number -= 1
-                    self[pos] = 0
-                    return
+            self.update_properties_before_move(pos, new_pos)
 
         self[new_pos] = self[pos]
         self[pos] = 0

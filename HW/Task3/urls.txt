@@ -1,0 +1,4 @@
+https://en.wikipedia.org/wiki/Normal_distribution
+https://en.m.wikipedia.org/wiki/Gamma_distribution
+https://en.wikipedia.org/wiki/Pareto_distribution
+https://en.wikipedia.org/wiki/Student%27s_t-distribution
