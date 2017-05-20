@@ -1,0 +1,15 @@
+generate  --depth 3  --size 500 
+Fourteen, a sonneteer thy praises sings; 
+What magic myst’ries in that number lie! 
+Your hen hath fourteen eggs beneath her wings 
+That fourteen chickens to the roost may fly. 
+Fourteen full pounds the jockey’s stone must be; 
+His age fourteen – a horse’s prime is past. 
+Fourteen long hours too oft the Bard must fast; 
+Fourteen bright bumpers – bliss he ne’er must see! 
+Before fourteen, a dozen yields the strife; 
+Before fourteen – e’en thirteen’s strength is vain. 
+Fourteen good years – a woman gives us life; 
+Fourteen good men – we lose that life again. 
+What lucubrations can be more upon it? 	
+Fourteen good measur’d verses make a sonnet.
